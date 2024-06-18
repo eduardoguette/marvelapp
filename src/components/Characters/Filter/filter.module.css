@@ -1,0 +1,11 @@
+.container{
+
+  padding: 12px 48px 12px 48px;
+}
+
+
+.filterCaption {
+  text-transform: uppercase;
+  font: var(--caption);
+  margin-block-start: .5rem;
+}

@@ -1,0 +1,8 @@
+.header{
+  background-color: var(--secondary);
+  padding: 1rem;
+  max-height: 5.35rem ;
+  display:  flex;
+  align-items: center;
+  justify-content: space-between;
+}

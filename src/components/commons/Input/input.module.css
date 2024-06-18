@@ -1,0 +1,23 @@
+.label {
+  position: relative;
+}
+.icon{
+  position: absolute;
+  left: .5rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding-inline: 2.5rem;
+  padding-block: 1rem;
+  width: 100%;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+  }
+}

@@ -1,0 +1,9 @@
+.commicTitle {
+  width: 168.53px;
+  white-space: wrap;
+}
+
+.commicCaptionDate{
+  font: var(--caption);
+  color: var(--gray);
+}

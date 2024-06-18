@@ -1,0 +1,41 @@
+.characterHero {
+  background-color: var(--secondary);
+  border-top: 1px solid var(--gray);
+  color: var(--white);
+
+}
+
+.characterCard {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.characterImage {
+  aspect-ratio: 1;
+  max-width: 320px;
+}
+
+.characterInfo {
+  max-width: 640px;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.characterTitle {
+  font: var(--headline2);
+  text-transform: uppercase;
+}
+
+.characterContainer {
+  padding: 48px 0px 48px 0px;
+}
+.characterCommics {
+  padding: 0px 3rem 0px 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

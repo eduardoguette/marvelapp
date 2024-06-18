@@ -1,0 +1,4 @@
+.h2{
+  font: var(--headline2);
+  text-transform: uppercase;
+}

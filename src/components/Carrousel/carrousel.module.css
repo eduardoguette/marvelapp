@@ -1,0 +1,10 @@
+.carrouselList {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  gap: 1rem;
+}
+
+.carrouselItem img {
+  scroll-snap-align: start;
+}
