@@ -19,8 +19,8 @@ export const Card: FC<ICharacterCard> = ({ character }) => {
     }
   }, [character])
   return (
-    <li key={character.id} className={styles.card}>
-      <Link to={`character/${character.id}`} className={styles.cardLink}>
+    <article  className={styles.card}>
+      <Link to={`/character/${character.id}`} className={styles.cardLink}>
         <header>
           <img
             src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
@@ -33,6 +33,6 @@ export const Card: FC<ICharacterCard> = ({ character }) => {
         <p className="">{character.name}</p>
         <Action idCharacter={character.id} />
       </footer>
-    </li>
+    </article>
   )
 }

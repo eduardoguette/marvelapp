@@ -5,8 +5,9 @@ import { FC, useContext } from 'react'
 import styles from '../characters.module.css'
 interface IActionProps {
   idCharacter: number
+  characterDetails?: boolean
 }
-export const Action: FC<IActionProps> = ({ idCharacter }) => {
+export const Action: FC<IActionProps> = ({ idCharacter, characterDetails }) => {
   const { favorites, addFavorites } = useContext(ContextAppProvider)
   return (
     <button
@@ -16,9 +17,19 @@ export const Action: FC<IActionProps> = ({ idCharacter }) => {
       }}
     >
       {favorites.find((id) => id === idCharacter) ? (
-        <img src={heartRed} alt="heart icon" height={14} width={14} />
+        <img
+          src={heartRed}
+          alt="heart icon"
+          height={characterDetails ? 24 : 12}
+          width={characterDetails ? 24 : 12}
+        />
       ) : (
-        <img src={heart} alt="heart icon" height={14} width={14} />
+        <img
+          src={heart}
+          alt="heart icon"
+          height={characterDetails ? 24 : 12}
+          width={characterDetails ? 24 : 12}
+        />
       )}
     </button>
   )

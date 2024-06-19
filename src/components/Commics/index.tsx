@@ -6,16 +6,21 @@ interface ICommicsCardProps {
 }
 
 export const CommicsCard: FC<ICommicsCardProps> = ({ commic }) => {
+  if (!commic) return <></>
+
+  const date = commic.modified.split('-').shift()
+
   return (
     <article>
       <img
         src={`${commic.thumbnail.path}.${commic.thumbnail.extension}`}
-        alt=""
+        alt={commic.title}
         height={252.79}
         width={168.53}
       />
       <p className={style.commicTitle}>{commic.title}</p>
-      <span className={style.commicCaptionDate}>{new Date(commic.modified).getFullYear()}</span>
+
+      <span className={style.commicCaptionDate}>{date}</span>
     </article>
   )
 }

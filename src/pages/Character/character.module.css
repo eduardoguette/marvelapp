@@ -10,6 +10,11 @@
   display: flex;
   justify-content: center;
 }
+.characterCardHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .characterImage {
   aspect-ratio: 1;
