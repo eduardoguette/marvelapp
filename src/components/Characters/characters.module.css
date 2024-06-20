@@ -6,10 +6,15 @@
 ===== List
 */
 .list {
-  display: grid;
+  display: flex;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(172.5px,1fr));
+  flex-wrap: wrap;
+}
 
+.list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* 
@@ -20,6 +25,8 @@
   background-color: var(--secondary);
   color: var(--white);
   overflow: hidden;
+  width: 150.5px;
+  flex-shrink: 0;
 
   ::after {
     content: '';
@@ -89,8 +96,21 @@
   text-decoration: none
 }
 
+@media (width > 393px) {
+  .card {
+
+    width: 172.5px;
+    flex-shrink: 0;
+  }
+}
+
 @media (width > 640px) {
   .container {
     padding: 0px 48px 0px 48px;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(172.5px, 1fr));
   }
 }
