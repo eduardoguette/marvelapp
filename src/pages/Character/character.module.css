@@ -2,15 +2,30 @@
   background-color: var(--secondary);
   border-top: 1px solid var(--gray);
   color: var(--white);
+  position: relative;
 
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-right: 1.5rem solid;
+    border-bottom: 1.5rem solid transparent;
+    transform: rotate(90deg);
+  }
 }
 
 .characterCard {
   margin: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
-.characterCardHeader{
+
+
+.characterCardHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +33,20 @@
 
 .characterImage {
   aspect-ratio: 1;
-  max-width: 320px;
+  max-width: 390px;
+}
+
+
+@media (width > 640px) {
+  .characterImage {
+    height: 320px;
+    width: 320px;
+    max-width: 320px;
+  }
+
+  .characterCard {
+    flex-direction: row;
+  }
 }
 
 .characterInfo {
@@ -38,6 +66,7 @@
 .characterContainer {
   padding: 48px 0px 48px 0px;
 }
+
 .characterCommics {
   padding: 0px 3rem 0px 3rem;
   display: flex;

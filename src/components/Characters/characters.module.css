@@ -1,14 +1,14 @@
-
 .container {
-  padding: 0px 48px 0px 48px  ;
+  padding: 0px 1rem 0px 1rem;
 }
+
 /* 
 ===== List
 */
 .list {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(189.97px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(172.5px,1fr));
 
 }
 
@@ -45,6 +45,7 @@
   height: 189.97px;
   transition: .2s ease-in-out;
   border-bottom: 5.38px solid var(--primary);
+
   :hover {
     transform: scale(110%);
   }
@@ -56,6 +57,7 @@
 
   justify-content: space-between;
   text-transform: uppercase;
+
   p {
     font: var(--caption);
     line-clamp: 1;
@@ -85,4 +87,10 @@
   align-items: center;
   gap: .5rem;
   text-decoration: none
+}
+
+@media (width > 640px) {
+  .container {
+    padding: 0px 48px 0px 48px;
+  }
 }

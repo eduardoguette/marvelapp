@@ -3,6 +3,7 @@ import { CharactersList } from '@/components/Characters'
 import { Filter } from '@/components/Characters/Filter'
 import { ContextAppProvider } from '@/context'
 
+import { Loader } from '@/components/commons/Loader'
 import { Characters } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import { AxiosResponse } from 'axios'
@@ -13,10 +14,8 @@ export const Favorites = () => {
 
   const { isLoading, data: dataResult } = useQuery<AxiosResponse<Characters>>({
     queryFn: characters.getAll,
-    queryKey: ['characters'],
+    queryKey: ['characters']
   })
-
-  
 
   useEffect(() => {
     if (dataResult)
@@ -31,10 +30,9 @@ export const Favorites = () => {
       )
   }, [dataResult, filter, setData, favorites])
 
-
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <Loader />
   return (
-    <section>
+    <section className={styles.container}>
       <h2 className={styles.h2}>Favorites</h2>
       <Filter />
       <CharactersList />

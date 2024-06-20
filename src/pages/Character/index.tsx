@@ -2,6 +2,7 @@ import { characters } from '@/api'
 import { CommicsCard, Skeleton } from '@/components'
 import Carrousel from '@/components/Carrousel'
 import { Action } from '@/components/Characters'
+import { Loader } from '@/components/commons/Loader'
 import { Characters } from '@/types'
 import { CommicsData } from '@/types/CharactersCommics'
 import { useQuery } from '@tanstack/react-query'
@@ -17,7 +18,9 @@ export const Character = () => {
     queryKey: ['character', id],
     staleTime: Infinity
   })
-  const { data: dataCommics } = useQuery<AxiosResponse<CommicsData>>({
+  const { data: dataCommics, isLoading: isLoadingCommics } = useQuery<
+    AxiosResponse<CommicsData>
+  >({
     queryFn: () => characters.getCommics(id as string),
     queryKey: ['character/commics', id],
     staleTime: Infinity
@@ -63,8 +66,6 @@ export const Character = () => {
             className={styles.characterImage}
             src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
             alt={character.name}
-            height={320}
-            width={320}
           />
           <div className={styles.characterInfo}>
             <header className={styles.characterCardHeader}>
@@ -116,9 +117,10 @@ export const Character = () => {
               </Carrousel>
             </AnimatePresence>
           )}
-          {(!dataCommics || dataCommics?.data.data.results.length === 0) && (
+          {!isLoadingCommics && dataCommics?.data.data.results.length === 0 && (
             <p>No commics found</p>
           )}
+          {isLoadingCommics && <Loader />}
         </article>
       </section>
     </div>

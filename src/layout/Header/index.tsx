@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Link to={'/'}>
-        <img src={logo} alt="Logo Marvelapp" />
+        <img src={logo} alt="Logo Marvelapp" width={130} height={52} />
       </Link>
       <LikeCounter />
     </header>

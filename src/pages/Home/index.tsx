@@ -1,6 +1,7 @@
 import { characters } from '@/api'
 import { CharactersList } from '@/components/Characters'
 import { Filter } from '@/components/Characters/Filter'
+import { Loader } from '@/components/commons/Loader'
 import { ContextAppProvider } from '@/context'
 import { Characters } from '@/types'
 import { useQuery } from '@tanstack/react-query'
@@ -27,7 +28,7 @@ export const Home: React.FC = () => {
     }
   }, [data, filter, setData, isLoading])
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <Loader />
 
   return (
     <motion.div
