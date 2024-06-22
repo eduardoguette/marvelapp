@@ -95,34 +95,37 @@ export const Character = () => {
           </div>
         </motion.article>
       </section>
-      <section className={styles.characterContainer}>
-        <article className={styles.characterCommics}>
-          <h2 className={styles.characterTitle}>Commics</h2>
-          {dataCommics && dataCommics?.data.data.results.length > 0 && (
-            <AnimatePresence>
-              <Carrousel>
-                {dataCommics?.data.data.results.map((commic, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.3 }}
-                  >
-                    <Carrousel.Item>
-                      <CommicsCard commic={commic} />
-                    </Carrousel.Item>
-                  </motion.div>
-                ))}
-              </Carrousel>
-            </AnimatePresence>
-          )}
-          {!isLoadingCommics && dataCommics?.data.data.results.length === 0 && (
-            <p>No commics found</p>
-          )}
-          {isLoadingCommics && <Loader />}
-        </article>
-      </section>
+      {dataCommics && (
+        <section className={styles.characterContainer}>
+          <article className={styles.characterCommics}>
+            <h2 className={styles.characterTitle}>Commics</h2>
+            {dataCommics?.data.data.results.length > 0 && (
+              <AnimatePresence>
+                <Carrousel>
+                  {dataCommics?.data.data.results.map((commic, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.3 }}
+                    >
+                      <Carrousel.Item>
+                        <CommicsCard commic={commic} />
+                      </Carrousel.Item>
+                    </motion.div>
+                  ))}
+                </Carrousel>
+              </AnimatePresence>
+            )}
+            {!isLoadingCommics &&
+              dataCommics?.data.data.results.length === 0 && (
+                <p>No commics found</p>
+              )}
+            {isLoadingCommics && <Loader />}
+          </article>
+        </section>
+      )}
     </div>
   )
 }

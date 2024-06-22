@@ -33,16 +33,13 @@ export const Home: React.FC = () => {
   return (
     <motion.div
       initial={{
-        opacity: 0,
-        x: 100
+        opacity: 0
       }}
       animate={{
-        opacity: 1,
-        x: 0
+        opacity: 1
       }}
       exit={{
-        opacity: 0,
-        x: -100
+        opacity: 0
       }}
       className={styles.container}
     >

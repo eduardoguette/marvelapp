@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`characters API > getAll debería llamar a marvelappApi.get con la URL correcta y coincidir con el snapshot 1`] = `
+{
+  "data": {
+    "results": [],
+  },
+}
+`;
+
+exports[`characters API > getById debería llamar a marvelappApi.get con la URL correcta y coincidir con el snapshot 1`] = `
+{
+  "data": {
+    "results": [
+      {
+        "id": "1",
+        "name": "Spider-Man",
+      },
+    ],
+  },
+}
+`;
+
+exports[`characters API > getCommics debería llamar a marvelappApi.get con la URL correcta y coincidir con el snapshot 1`] = `
+{
+  "data": {
+    "results": [],
+  },
+}
+`;

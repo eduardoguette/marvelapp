@@ -27,7 +27,6 @@
   overflow: hidden;
   width: 150.5px;
   flex-shrink: 0;
-
   ::after {
     content: '';
     position: absolute;

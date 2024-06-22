@@ -1,6 +1,6 @@
 import MarvelApp from '@/MarvelApp'
 import { Character, Favorites, Home } from '@/pages'
-import { createBrowserRouter } from 'react-router-dom'
+import { Navigate, createBrowserRouter } from 'react-router-dom'
 
 export const router = createBrowserRouter([
   {
@@ -21,4 +21,8 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <Navigate to={'/'} />
+  }
 ])

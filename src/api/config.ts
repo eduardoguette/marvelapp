@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const defaults = {
+  const defaults = {
   baseUrl: 'https://gateway.marvel.com:443/v1/public/',
   queryParams: {
     apikey: '54d2294be5f84e38f732119e45c34b88',

@@ -15,6 +15,7 @@ export const Action: FC<IActionProps> = ({ idCharacter, characterDetails }) => {
       onClick={() => {
         addFavorites(idCharacter)
       }}
+      data-testid="action-component"
     >
       {favorites.find((id) => id === idCharacter) ? (
         <img

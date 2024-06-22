@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Input Component > debería aplicar las clases CSS correctamente 1`] = `
+<div>
+  <label
+    class="_label_97a894"
+    for="search"
+  >
+    <img
+      alt="sear"
+      class="_icon_97a894"
+      src="/src/assets/search.svg"
+    />
+    <input
+      class="_input_97a894"
+      id="search"
+      placeholder="Buscar..."
+    />
+  </label>
+</div>
+`;

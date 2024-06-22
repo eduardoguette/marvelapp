@@ -37,17 +37,6 @@
 }
 
 
-@media (width > 640px) {
-  .characterImage {
-    height: 320px;
-    width: 320px;
-    max-width: 320px;
-  }
-
-  .characterCard {
-    flex-direction: row;
-  }
-}
 
 .characterInfo {
   max-width: 640px;
@@ -55,8 +44,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem;
+  padding: 24px 16px 48px 16px;
 }
+
 
 .characterTitle {
   font: var(--headline2);
@@ -68,8 +58,28 @@
 }
 
 .characterCommics {
-  padding: 0px 3rem 0px 3rem;
+  padding: 0px 1rem 0px 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+@media (width > 640px) {
+  .characterCommics {
+    padding: 0px 3rem 0px 3rem;
+  }
+
+  .characterInfo {
+    padding: 3rem;
+  }
+
+  .characterImage {
+    height: 320px;
+    width: 320px;
+    max-width: 320px;
+  }
+
+  .characterCard {
+    flex-direction: row;
+  }
 }

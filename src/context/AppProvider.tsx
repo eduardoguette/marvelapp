@@ -1,6 +1,7 @@
 import { CharactersResult } from '@/types'
+import { saveInLocal, updateFavorites } from '@/utils'
 
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 
 interface IProvider {
   data: null | CharactersResult[]
@@ -23,19 +24,23 @@ export const ContextAppProvider = createContext<IProvider>({
 interface AppProvider {
   children: ReactNode
 }
+
+
 export const AppProvider: React.FC<AppProvider> = ({ children }) => {
   const [filter, setFiler] = useState('')
   const [favorites, setFavorites] = useState<number[]>([])
+
+  useEffect(() => {
+    setFavorites(saveInLocal.get('heroes') || [])
+  }, [])
+
   const [data, setData] = useState<CharactersResult[] | null>(null)
 
   const addFavorites = (id: number) => {
-    if (favorites.includes(id)) {
-      setFavorites(favorites.filter((favorite) => favorite !== id))
-      return
-    }
-    setFavorites([...favorites, id])
+    const newFavorites = updateFavorites(favorites, id)
+    setFavorites(newFavorites)
+    saveInLocal.set('heroes', newFavorites)
   }
-
   return (
     <ContextAppProvider.Provider
       value={{

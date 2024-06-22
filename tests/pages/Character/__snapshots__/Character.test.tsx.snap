@@ -1,0 +1,179 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Character Component > Debe mostrar el personaje si se ha cargado correctamente 1`] = `
+<div>
+  <div>
+    <section
+      class="_characterHero_ad5e15"
+    >
+      <article
+        class="_characterCard_ad5e15"
+        style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+      >
+        <img
+          alt="John Doe"
+          class="_characterImage_ad5e15"
+          src="https://example.com/image.jpg"
+        />
+        <div
+          class="_characterInfo_ad5e15"
+        >
+          <header
+            class="_characterCardHeader_ad5e15"
+          >
+            <h2
+              class="_characterTitle_ad5e15"
+              style="opacity: 0;"
+            >
+              John Doe
+            </h2>
+            <button
+              class="_button_6bd7a6"
+              data-testid="action-component"
+            >
+              <img
+                alt="heart icon"
+                height="24"
+                src="/src/assets/heart-black.svg"
+                width="24"
+              />
+            </button>
+          </header>
+          <p
+            style="opacity: 0;"
+          >
+            Test description
+          </p>
+        </div>
+      </article>
+    </section>
+    <section
+      class="_characterContainer_ad5e15"
+    >
+      <article
+        class="_characterCommics_ad5e15"
+      >
+        <h2
+          class="_characterTitle_ad5e15"
+        >
+          Commics
+        </h2>
+        <ul
+          class="_carrouselList_a584d8"
+        >
+          <div
+            style="opacity: 0;"
+          >
+            <li
+              class="_carrouselItem_a584d8"
+            >
+              <article>
+                <img
+                  height="252.79"
+                  src="https://example.com/image.jpg"
+                  width="168.53"
+                />
+                <p
+                  class="_commicTitle_5686fd"
+                />
+                <span
+                  class="_commicCaptionDate_5686fd"
+                />
+              </article>
+            </li>
+          </div>
+        </ul>
+      </article>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Character Component > Debe renderizar el commic correctamente  1`] = `
+<div>
+  <div>
+    <section
+      class="_characterHero_ad5e15"
+    >
+      <article
+        class="_characterCard_ad5e15"
+        style="opacity: 0; transform: translateX(-50px) translateZ(0);"
+      >
+        <img
+          class="_characterImage_ad5e15"
+          src="https://example.com/commic-image.jpg"
+        />
+        <div
+          class="_characterInfo_ad5e15"
+        >
+          <header
+            class="_characterCardHeader_ad5e15"
+          >
+            <h2
+              class="_characterTitle_ad5e15"
+              style="opacity: 0;"
+            />
+            <button
+              class="_button_6bd7a6"
+              data-testid="action-component"
+            >
+              <img
+                alt="heart icon"
+                height="24"
+                src="/src/assets/heart-black.svg"
+                width="24"
+              />
+            </button>
+          </header>
+          <p
+            style="opacity: 0;"
+          />
+        </div>
+      </article>
+    </section>
+    <section
+      class="_characterContainer_ad5e15"
+    >
+      <article
+        class="_characterCommics_ad5e15"
+      >
+        <h2
+          class="_characterTitle_ad5e15"
+        >
+          Commics
+        </h2>
+        <ul
+          class="_carrouselList_a584d8"
+        >
+          <div
+            style="opacity: 0;"
+          >
+            <li
+              class="_carrouselItem_a584d8"
+            >
+              <article>
+                <img
+                  alt="Amazing Spider-Man"
+                  height="252.79"
+                  src="https://example.com/commic-image.jpg"
+                  width="168.53"
+                />
+                <p
+                  class="_commicTitle_5686fd"
+                >
+                  Amazing Spider-Man
+                </p>
+                <span
+                  class="_commicCaptionDate_5686fd"
+                >
+                  2021
+                </span>
+              </article>
+            </li>
+          </div>
+        </ul>
+      </article>
+    </section>
+  </div>
+</div>
+`;

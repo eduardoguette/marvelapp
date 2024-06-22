@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header Component > debería renderizar correctamente 1`] = `
+<div>
+  <header
+    class="_header_bdf1c4"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Logo Marvelapp"
+        height="52"
+        src="/src/assets/logo.svg"
+        width="130"
+      />
+    </a>
+    <div
+      data-testid="like-counter"
+    />
+  </header>
+</div>
+`;

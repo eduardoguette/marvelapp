@@ -1,6 +1,6 @@
 import { marvelappApi } from './config'
 
-const defaults = {
+export const defaults = {
   getAllCharacters: '/characters'
 }
 

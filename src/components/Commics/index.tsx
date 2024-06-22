@@ -8,7 +8,7 @@ interface ICommicsCardProps {
 export const CommicsCard: FC<ICommicsCardProps> = ({ commic }) => {
   if (!commic) return <></>
 
-  const date = commic.modified.split('-').shift()
+  const date = commic?.modified?.split('-').shift()
 
   return (
     <article>
