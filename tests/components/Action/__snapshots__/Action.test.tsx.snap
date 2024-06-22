@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Pruebas en <Action/> > Debe cambiar el ícono cuando el usuario añada a favoritos el character 1`] = `undefined`;
