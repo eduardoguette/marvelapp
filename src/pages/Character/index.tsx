@@ -26,7 +26,7 @@ export const Character = () => {
     staleTime: Infinity,
   })
 
-  if (isLoading)
+  if (isLoading || isLoadingCommics)
     return (
       <>
         <Skeleton
@@ -37,6 +37,7 @@ export const Character = () => {
         />
       </>
     )
+
   if (!data) return <div>Not found</div>
   if (isError) return <div>Error</div>
 

@@ -18,7 +18,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["vitest/globals"]
   },
   "overrides": [
     {
@@ -28,7 +29,7 @@
       }
     }
   ],
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
