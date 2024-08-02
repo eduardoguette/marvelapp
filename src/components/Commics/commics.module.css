@@ -1,9 +1,12 @@
+.commicImage {
+  object-fit: fill;
+}
 .commicTitle {
   width: 168.53px;
   white-space: wrap;
 }
 
-.commicCaptionDate{
+.commicCaptionDate {
   font: var(--caption);
   color: var(--gray);
 }

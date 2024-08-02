@@ -6,28 +6,31 @@ import { ReactNode, createContext, useEffect, useState } from 'react'
 interface IProvider {
   data: null | CharactersResult[]
   filter: string
-  setFiler: (filter: string) => void
+  setFilter: (filter: string) => void
   favorites: number[]
   addFavorites: (id: number) => void
   setData: (data: CharactersResult[]) => void
+  loading: boolean
+  setLoading: (loading: boolean) => void
 }
 
 export const ContextAppProvider = createContext<IProvider>({
   data: null,
   filter: '',
-  setFiler: () => {},
+  setFilter: () => {},
   setData: () => {},
   favorites: [],
-  addFavorites: () => {}
+  addFavorites: () => {},
+  loading: true,
+  setLoading: () => {},
 })
 
 interface AppProvider {
   children: ReactNode
 }
 
-
 export const AppProvider: React.FC<AppProvider> = ({ children }) => {
-  const [filter, setFiler] = useState('')
+  const [filter, setFilter] = useState('')
   const [favorites, setFavorites] = useState<number[]>([])
 
   useEffect(() => {
@@ -35,6 +38,12 @@ export const AppProvider: React.FC<AppProvider> = ({ children }) => {
   }, [])
 
   const [data, setData] = useState<CharactersResult[] | null>(null)
+
+  const [loading, setLoading] = useState(true)
+
+  const onSetLoading = (loading: boolean) => {
+    setLoading(loading)
+  }
 
   const addFavorites = (id: number) => {
     const newFavorites = updateFavorites(favorites, id)
@@ -48,8 +57,10 @@ export const AppProvider: React.FC<AppProvider> = ({ children }) => {
         data,
         setData,
         filter,
-        setFiler,
-        addFavorites
+        setFilter,
+        addFavorites,
+        loading,
+        setLoading: onSetLoading,
       }}
     >
       {children}

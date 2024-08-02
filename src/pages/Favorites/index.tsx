@@ -14,7 +14,7 @@ export const Favorites = () => {
 
   const { isLoading, data: dataResult } = useQuery<AxiosResponse<Characters>>({
     queryFn: characters.getAll,
-    queryKey: ['characters']
+    queryKey: ['characters'],
   })
 
   useEffect(() => {

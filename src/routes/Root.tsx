@@ -9,20 +9,20 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
         path: 'character/:id',
-        element: <Character />
+        element: <Character />,
       },
       {
         path: 'favorites',
-        element: <Favorites />
-      }
-    ]
+        element: <Favorites />,
+      },
+    ],
   },
   {
     path: '*',
-    element: <Navigate to={'/'} />
-  }
+    element: <Navigate to={'/'} />,
+  },
 ])

@@ -16,14 +16,14 @@ export const Character = () => {
   const { isLoading, data, isError } = useQuery<AxiosResponse<Characters>>({
     queryFn: () => characters.getById(id as string),
     queryKey: ['character', id],
-    staleTime: Infinity
+    staleTime: Infinity,
   })
   const { data: dataCommics, isLoading: isLoadingCommics } = useQuery<
     AxiosResponse<CommicsData>
   >({
     queryFn: () => characters.getCommics(id as string),
     queryKey: ['character/commics', id],
-    staleTime: Infinity
+    staleTime: Infinity,
   })
 
   if (isLoading)
@@ -32,7 +32,7 @@ export const Character = () => {
         <Skeleton
           style={{
             width: '100%',
-            height: '320px'
+            height: '320px',
           }}
         />
       </>
@@ -50,15 +50,15 @@ export const Character = () => {
         <motion.article
           initial={{
             opacity: 0,
-            x: -50
+            x: -50,
           }}
           animate={{
             opacity: 1,
-            x: 0
+            x: 0,
           }}
           exit={{
             opacity: 0,
-            x: 50
+            x: 50,
           }}
           className={styles.characterCard}
         >
@@ -71,10 +71,10 @@ export const Character = () => {
             <header className={styles.characterCardHeader}>
               <motion.h2
                 initial={{
-                  opacity: 0
+                  opacity: 0,
                 }}
                 animate={{
-                  opacity: 1
+                  opacity: 1,
                 }}
                 className={styles.characterTitle}
               >
@@ -84,10 +84,10 @@ export const Character = () => {
             </header>
             <motion.p
               initial={{
-                opacity: 0
+                opacity: 0,
               }}
               animate={{
-                opacity: 1
+                opacity: 1,
               }}
             >
               {character.description}

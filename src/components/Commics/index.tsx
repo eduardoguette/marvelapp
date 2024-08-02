@@ -13,6 +13,7 @@ export const CommicsCard: FC<ICommicsCardProps> = ({ commic }) => {
   return (
     <article>
       <img
+        className={style.commicImage}
         src={`${commic.thumbnail.path}.${commic.thumbnail.extension}`}
         alt={commic.title}
         height={252.79}

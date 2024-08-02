@@ -2,11 +2,11 @@
   padding: 3rem 0px 3rem 0px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
 .h2 {
   font: var(--headline2);
   text-transform: uppercase;
-  padding: 0px 3rem 0px 3rem
+  padding: 0px 3rem 0px 3rem;
 }

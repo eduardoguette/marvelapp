@@ -2,11 +2,16 @@ import { ContextAppProvider } from '@/context/AppProvider'
 import { useContext } from 'react'
 import { Card } from '../Card'
 
+import { Loader } from '@/components/commons/Loader'
+import { useFetchCharacters } from '@/hooks'
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from '../characters.module.css'
 
 export const CharactersList = () => {
   const { data } = useContext(ContextAppProvider)
+  const { loading } = useFetchCharacters()
+
+  if (loading) return <Loader />
 
   return (
     <section className={styles.container}>

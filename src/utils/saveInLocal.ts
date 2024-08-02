@@ -9,5 +9,5 @@ export const saveInLocal = {
     const parsedData = JSON.parse(data) as T
 
     return parsedData
-  }
+  },
 }

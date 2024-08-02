@@ -19,7 +19,7 @@ export const Card: FC<ICharacterCard> = ({ character }) => {
     }
   }, [character])
   return (
-    <article  className={styles.card}>
+    <article className={styles.card}>
       <Link to={`/character/${character.id}`} className={styles.cardLink}>
         <header>
           <img
@@ -30,7 +30,7 @@ export const Card: FC<ICharacterCard> = ({ character }) => {
         </header>
       </Link>
       <footer className={styles.cardFooter}>
-        <p className="">{character.name}</p>
+        <p className={styles.cardTitle}>{character.name}</p>
         <Action idCharacter={character.id} />
       </footer>
     </article>

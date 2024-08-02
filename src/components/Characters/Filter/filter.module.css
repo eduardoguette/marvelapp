@@ -4,9 +4,8 @@
 .filterCaption {
   text-transform: uppercase;
   font: var(--caption);
-  margin-block-start: .5rem;
+  margin-block-start: 0.5rem;
 }
-
 
 @media (width > 640px) {
   .container {
@@ -19,5 +18,3 @@
     padding: 16px 48px 16px 48px;
   }
 }
-
-

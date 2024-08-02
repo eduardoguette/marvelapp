@@ -12,6 +12,11 @@ Marvel App es una aplicación creada para obtener información sobre diferentes 
   - [Construido con](#construido-con)
   - [Lo que aprendí](#lo-que-aprendí)  
 - [Autor](#autor) 
+- [Guia de Instalación](#Guía-de-Instalación)
+  - [Requisitos Previos](#Requisitos-Previos)
+  - [Instalación](#Instalación)
+  - [Ejecución del Proyecto](#Ejecución-del-Proyecto)
+- [Decisiones de Arquitectura](#Decisiones-de-Arquitectura)
 
 ## Descripción General
 
@@ -53,6 +58,58 @@ Los usuarios deberían ser capaces de:
 ### Lo que aprendí 
 
 El mayor reto fue la implementación de las pruebas mediante una librería, ya que normalmente no suelo realizarlas. Sin embargo, gracias a mi experiencia previa en desarrollo, pude superar esta dificultad. Una vez que leí la documentación de Vitest y @testing-library/react, recordé conceptos que había aprendido antes y pude aplicar estos conocimientos para escribir pruebas efectivas. Esto no solo me permitió asegurarme de que mi código funcionaba correctamente, sino que también mejoró mi comprensión sobre la importancia de las pruebas en el desarrollo de software.
+
+## Guía de Instalación
+
+### Requisitos Previos
+
+Asegúrate de tener instalado Node.js (versión 14 o superior) y npm (versión 6 o superior).
+
+### Instalación
+
+1. Clona el repositorio:
+
+    ```bash
+    git clone https://github.com/eduardoguette/marvelapp.git
+    ```
+
+2. Navega al directorio del proyecto:
+
+    ```bash
+    cd marvelapp
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+### Ejecución del Proyecto
+
+#### Para ejecutar el proyecto en modo desarrollo:
+
+```bash
+    npm run dev 
+```
+
+Esto iniciará la aplicación en http://localhost:3000.
+
+#### Build para Producción
+```bash
+    npm run build 
+```
+Los archivos estáticos se generarán en la carpeta dist.
+
+
+
+### Decisiones de Arquitectura
+- React y Context API: Se eligieron estas tecnologías para manejar el estado global de la aplicación, proporcionando una manera eficiente de compartir datos entre componentes sin necesidad de pasar props de forma manual.
+- TypeScript: Se decidió usar TypeScript para mejorar la robustez y mantenibilidad del código, proporcionando tipado estático y ayudando a evitar errores comunes durante el desarrollo.
+- React Query: Esta librería fue elegida para manejar la obtención y caché de datos de la API de Marvel, optimizando las solicitudes HTTP y mejorando el rendimiento de la aplicación.
+- Framer Motion: Se utilizó para implementar animaciones fluidas y atractivas en la interfaz de usuario.
+- Vite: Optamos por Vite como nuestro empaquetador debido a su rapidez en el arranque del servidor de desarrollo y su eficiente proceso de construcción.
+- Pruebas: Se implementaron pruebas con Vitest y @testing-library/react para asegurar la calidad del código y el correcto funcionamiento de la aplicación.
 
 
 ### Autor

@@ -1,2 +1,2 @@
-export * from './saveInLocal';
-export * from './updateFavorites';
+export * from './saveInLocal'
+export * from './updateFavorites'

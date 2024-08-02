@@ -12,12 +12,12 @@ export const Skeleton: FC<SkeletonProps> = ({ style }) => {
       transition={{
         duration: 1,
         repeat: Infinity,
-        repeatType: 'loop'
+        repeatType: 'loop',
       }}
       style={{
         backgroundColor: '#e0e0e0',
         borderRadius: '4px',
-        ...style
+        ...style,
       }}
     ></motion.div>
   )

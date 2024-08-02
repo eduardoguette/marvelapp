@@ -68,7 +68,7 @@ export interface Thumbnail {
 }
 
 export enum Extension {
-  Jpg = 'jpg'
+  Jpg = 'jpg',
 }
 
 export interface Stories {
@@ -86,7 +86,7 @@ export interface StoriesItem {
 
 export enum ItemType {
   Cover = 'cover',
-  InteriorStory = 'interiorStory'
+  InteriorStory = 'interiorStory',
 }
 
 export interface TextObject {

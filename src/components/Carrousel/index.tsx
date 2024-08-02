@@ -5,7 +5,7 @@ interface CarrouselProps {
 }
 
 const Carrousel: FC<CarrouselProps> & { Item: FC<CarrouselItemProps> } = ({
-  children
+  children,
 }) => {
   return <ul className={styles.carrouselList}>{children}</ul>
 }
@@ -15,7 +15,6 @@ interface CarrouselItemProps {
 }
 
 const CarrouselItem: FC<CarrouselItemProps> = ({ children }) => {
-  
   return <li className={styles.carrouselItem}>{children}</li>
 }
 

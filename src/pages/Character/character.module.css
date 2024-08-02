@@ -24,7 +24,6 @@
   flex-direction: column;
 }
 
-
 .characterCardHeader {
   display: flex;
   align-items: center;
@@ -36,8 +35,6 @@
   max-width: 390px;
 }
 
-
-
 .characterInfo {
   max-width: 640px;
   flex: auto;
@@ -46,7 +43,6 @@
   justify-content: center;
   padding: 24px 16px 48px 16px;
 }
-
 
 .characterTitle {
   font: var(--headline2);

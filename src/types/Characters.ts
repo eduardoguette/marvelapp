@@ -16,7 +16,7 @@ export interface CharactersResult {
   description: string
   modified: string
   thumbnail: Thumbnail
-  comics: Comics 
+  comics: Comics
 }
 
 export interface Comics {
