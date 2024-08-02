@@ -5,7 +5,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'prettier', // Asegúrate de que prettier esté al final
+    'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'tests'],
   parser: '@typescript-eslint/parser',
@@ -15,6 +15,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'prettier/prettier': 'warn', // Añade esta línea
+    'prettier/prettier': 'warn',
   },
 }

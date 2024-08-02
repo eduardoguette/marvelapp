@@ -1,27 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import React, { useState } from 'react'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { Action } from '../../../src/components/Characters/Action'
 import { ContextAppProvider } from '../../../src/context/AppProvider'
-import { updateFavorites } from '../../../src/utils'
 
-const MockContextProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState<number[]>([])
-
-  const addFavorites = (id: number) => {
-    const newFavorites = updateFavorites(favorites, id)
-    setFavorites(newFavorites)
-  }
+const MockContextProvider = ({ children, favorites, addFavorites }) => {
+  const [favState, setFavState] = useState(favorites)
 
   return (
     <ContextAppProvider.Provider
       value={{
-        favorites,
-        addFavorites,
         data: null,
         filter: '',
-        setFiler: () => {},
-        setData: () => {}
+        setFilter: () => {},
+        setData: () => {},
+        favorites: favState,
+        addFavorites,
+        loading: true,
+        setLoading: () => {},
       }}
     >
       {children}
@@ -30,54 +26,42 @@ const MockContextProvider = ({ children }) => {
 }
 
 describe('Pruebas en <Action/>', () => {
-  const mockCharacterId = 1234
-  const renderComponent = (idCharacter: number, characterDetails?: boolean) => {
+  const mockAddFavorites = vi.fn()
+
+  const renderComponent = (
+    idCharacter: number,
+    characterDetails?: boolean,
+    favorites: number[] = []
+  ) => {
     render(
-      <MockContextProvider>
+      <MockContextProvider
+        addFavorites={mockAddFavorites}
+        favorites={favorites}
+      >
         <Action idCharacter={idCharacter} characterDetails={characterDetails} />
       </MockContextProvider>
     )
   }
-  it('Debe cambiar el ícono cuando el usuario añada a favoritos el character', () => {
-    renderComponent(mockCharacterId)
-    
 
+  it('debería mostrar el botón con el ícono correcto si el personaje es favorito', () => {
+    renderComponent(1, true, [1])
     const button = screen.getByTestId('action-component')
+    expect(button).toBeInTheDocument()
+    const favoriteIcon = screen.getByTestId('favorite-icon')
+    expect(favoriteIcon).toBeInTheDocument()
+  })
 
-    expect(button.innerHTML).toContain('heart-black.svg')
+  it('debería mostrar el botón con el ícono correcto si el personaje no es favorito', () => {
+    renderComponent(3, false, [1, 2])
+    const button = screen.getByTestId('action-component')
+    expect(button).toBeInTheDocument()
+    expect(button.querySelector('svg')).not.toHaveClass('buttonFav')
+  })
 
+  it('debería llamar a addFavorites cuando se hace clic en el botón', () => {
+    renderComponent(3, false)
+    const button = screen.getByTestId('action-component')
     fireEvent.click(button)
-
-    expect(button.innerHTML).toContain('heart.svg')
+    expect(mockAddFavorites).toHaveBeenCalledWith(3)
   })
-
-  it('Debe cambiar el ícono cuando el usuario quite de favoritos el character', () => {
-    renderComponent(mockCharacterId)
-
-    const button = screen.getByTestId('action-component')
-    fireEvent.click(button) // Agregar a favoritos
-    fireEvent.click(button) // Quitar de favoritos
-
-    expect(button.innerHTML).toContain('heart-black.svg')
-  })
-
-  it('Debe ajustar el tamaño del ícono según la propiedad characterDetails', () => {
-    renderComponent(mockCharacterId, true)
-
-    const buttonWithDetails = screen.getByTestId('action-component')
-    const imgWithDetails = buttonWithDetails.querySelector('img')
-
-    expect(imgWithDetails?.height).toBe(24)
-    expect(imgWithDetails?.width).toBe(24)
-  })
-
-  it('Debe mantener el tamaño del ícono cuando characterDetails es false', () => {
-    renderComponent(mockCharacterId, false);
-
-    const buttonWithoutDetails = screen.getByTestId('action-component');
-    const imgWithoutDetails = buttonWithoutDetails.querySelector('img');
-
-    expect(imgWithoutDetails?.height).toBe(12);
-    expect(imgWithoutDetails?.width).toBe(12);
-  });
 })
